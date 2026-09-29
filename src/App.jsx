@@ -2,6 +2,11 @@ import { useState } from 'react'
 import './App.css'
 
 const TOKEN_KEY = 'login-demo-token'
+const DEMO_ACCOUNTS = [
+  { username: 'admin', password: '1234', userId: 101, role: 'admin' },
+  { username: 'editor', password: 'edit123', userId: 102, role: 'editor' },
+  { username: 'viewer', password: 'view123', userId: 103, role: 'viewer' },
+]
 
 function readSavedSession() {
   const token = localStorage.getItem(TOKEN_KEY)
@@ -25,12 +30,16 @@ function App() {
   function handleLogin(event) {
     event.preventDefault()
 
-    if (username !== 'admin' || password !== '1234') {
+    const account = DEMO_ACCOUNTS.find(
+      (demoAccount) => demoAccount.username === username && demoAccount.password === password,
+    )
+
+    if (!account) {
       setError('That username and password do not match.')
       return
     }
 
-    const user = { userId: 101, role: 'admin' }
+    const user = { userId: account.userId, role: account.role }
     const token = btoa(JSON.stringify(user))
 
     localStorage.setItem(TOKEN_KEY, token)
@@ -142,7 +151,16 @@ function App() {
               </button>
             </form>
 
-            <p className="demo-credentials">DEMO CREDENTIALS <strong>admin</strong><span>/</span><strong>1234</strong></p>
+            <div className="demo-credentials" aria-label="Demo accounts">
+              <p className="demo-credentials-label">DEMO ACCOUNTS</p>
+              {DEMO_ACCOUNTS.map((account) => (
+                <p className="demo-account" key={account.username}>
+                  <strong>{account.username}</strong>
+                  <span>/</span>
+                  <span className="demo-password">{account.password}</span>
+                </p>
+              ))}
+            </div>
           </section>
         )}
 
