@@ -151,16 +151,6 @@ function App() {
               </button>
             </form>
 
-            <div className="demo-credentials" aria-label="Demo accounts">
-              <p className="demo-credentials-label">DEMO ACCOUNTS</p>
-              {DEMO_ACCOUNTS.map((account) => (
-                <p className="demo-account" key={account.username}>
-                  <strong>{account.username}</strong>
-                  <span>/</span>
-                  <span className="demo-password">{account.password}</span>
-                </p>
-              ))}
-            </div>
           </section>
         )}
 

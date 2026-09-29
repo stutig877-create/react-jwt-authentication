@@ -184,11 +184,6 @@
 .login-button:focus-visible,
 .logout-button:focus-visible { outline: 3px solid rgba(46, 101, 80, 0.35); outline-offset: 3px; }
 
-.demo-credentials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin: 28px 0 0; }
-.demo-credentials-label { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 10px; letter-spacing: 0.7px; }
-.demo-account { display: flex; align-items: center; justify-content: center; gap: 5px; margin: 0; padding: 9px 5px; border: 1px solid #dce2dc; color: var(--muted); background: rgba(255, 255, 255, 0.65); font-size: 10px; }
-.demo-account strong,
-.demo-password { color: var(--ink); font-family: var(--font-mono); font-size: 10px; font-weight: 600; }
 
 .success-message { display: flex; align-items: center; gap: 13px; padding: 15px 17px; border: 1px solid #d3e3d4; background: #f0f6ef; }
 .success-check { display: grid; width: 28px; height: 28px; flex: 0 0 auto; place-items: center; border-radius: 50%; color: #fff; background: var(--green); font-size: 14px; }
@@ -242,9 +237,5 @@
   .dashboard-heading { align-items: flex-end; gap: 12px; }
   .logout-button { min-height: 36px; gap: 8px; padding: 0 9px; }
   .detail-item { padding-right: 13px; padding-left: 13px; }
-  .demo-credentials { gap: 5px; }
-  .demo-account { flex-direction: column; gap: 3px; padding: 7px 3px; font-size: 9px; }
-  .demo-account strong,
-  .demo-password { font-size: 9px; }
   .content-footer { font-size: 8px; letter-spacing: 0.7px; }
 }
