@@ -1,0 +1,46 @@
+:root {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: #e8eee8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --forest: #183c33;
+  --green: #356e54;
+  --lime: #c9d985;
+  --orange: #d9874e;
+  --ink: #1c2b25;
+  --muted: #78847b;
+  --surface: #f7f8f3;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: 'Aptos', 'Segoe UI', sans-serif;
+  --font-mono: 'Cascadia Code', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  #root {
+    align-items: stretch;
+  }
+}
